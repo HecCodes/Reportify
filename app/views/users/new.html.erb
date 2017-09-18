@@ -1,0 +1,25 @@
+<div class="container">
+<h1>Register</h1>
+  <%= form_for @user do |f| %>
+    <p><%= f.label :first_name %></p>
+    <%= f.text_field :first_name %>
+
+    <p><%= f.label :last_name %></p>
+    <%= f.text_field :last_name %>
+
+    <p><%= f.label :email %></p>
+    <%= f.email_field :email %>
+
+    <p><%= f.label :password %>(min. 6 characters)</p>
+    <%= f.password_field :password %><br>
+
+    <%= f.submit %>
+  <% end %>
+
+  <% if @user.errors.any? %>
+      <h2>Sorry, please fix the following <%= pluralize(@user.errors.count,"error")%></h2>
+    <% @user.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  <% end %>
+</div>

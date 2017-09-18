@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   get '/welcome', to: 'welcome#index'
   root 'welcome#index'
 
+  resources :sessions, only:[:new,:create]
   resources :users, only:[:new,:create,:destroy,:show]
+
+  delete '/logout', to:'sessions#destroy'
 end
