@@ -7,6 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'bcrypt'
 gem 'pry'
 gem 'pry-byebug'
 gem 'rails', '~> 5.1.2'
