@@ -1,0 +1,31 @@
+// Place all the styles related to the Students controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.right-container {
+  text-align: center;
+  float: right;
+  width: 89.8%;
+}
+
+.student-container {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 5%;
+  padding-left: 10%;
+}
+
+.add-student {
+  margin-top: 20px;
+  display: block;
+}
+.student-box {
+  float: left;
+  width: 150px;
+  margin-left: 5%;
+}
+.circle {
+  height: 150px;
+  border-radius: 80px;
+  background-color: blue;
+}

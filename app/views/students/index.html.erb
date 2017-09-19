@@ -1,0 +1,11 @@
+<div class="right-container">
+  <a href="#" class="add-student">Add a Student</a>
+  <div class="student-container">
+    <% @students.each do |student| %>
+      <div class="student-box">
+        <div class="circle"></div>
+        <h1><%= student.first_name %></h1>
+      </div>
+    <% end %>
+  </div>
+</div>

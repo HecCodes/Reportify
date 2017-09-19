@@ -1,7 +1,7 @@
 module SessionsHelper
 
   def secure_route
-    redirect '/login' unless current_user
+    redirect_to '/sessions/new' unless current_user
   end
 
   def current_user
