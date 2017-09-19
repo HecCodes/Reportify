@@ -3,7 +3,10 @@ class StudentsController < ApplicationController
 
   def index
     secure_route
-    @students = Student.all
+    @students = Student.where(teacher_id:current_user.id)
+    if @students.nil?
+      redirect_to '/students/new'
+    end
   end
 
   def new
@@ -35,7 +38,8 @@ class StudentsController < ApplicationController
   end
 
   def edit
-
+    @parents = Parent.all
+    @student = Student.find_by(id:params[:id])
   end
 
   def update
