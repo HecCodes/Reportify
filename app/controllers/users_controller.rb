@@ -6,11 +6,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    if @user.save && params[:user][:password] === params[:user][:password2]
       log_in @user
       redirect_to root_path
-    else
+    elsif params[:user][:password] != params[:user][:password2]
+      @errors = ["Passwords do not match"]
       render 'new'
+    else
+      @errors = ["Invalid Email"]
     end
   end
 
