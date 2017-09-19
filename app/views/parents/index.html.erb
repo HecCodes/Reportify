@@ -1,0 +1,15 @@
+<div class="right-container">
+  <%= link_to "Add a Parent", new_parent_path, class:'add-student' %>
+  <div class="student-container">
+    <% @parents.each do |parent| %>
+      <div class="student-box">
+        <div class="circle"></div>
+        <p><%= parent.first_name + " " + parent.last_name[0]+"."%></p>
+        <ul class="test">
+          <li><%= link_to "edit", "/parents/#{parent.id}/edit" %> | </li>
+          <li><%= link_to "delete", "/parents/#{parent.id}", method: 'delete',data: {confirm: " Are you sure?"} %></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>
