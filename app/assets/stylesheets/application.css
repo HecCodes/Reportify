@@ -24,9 +24,10 @@
 
 .sidebar {
   position: absolute;
-  top: 56.5px;
+  top: 55.5px;
   left: 0;
   border-right: 1px solid #eee;
-  width: 16.6%;
+  width: 25%;
   height: 100vh;
+  z-index: 1;
 }
