@@ -1,19 +1,19 @@
-<div class="container">
 <h1>Register</h1>
   <%= form_for @user do |f| %>
-    <p><%= f.label :first_name %></p>
-    <%= f.text_field :first_name %>
+  <div class="field">
+    <%= f.text_field :first_name, placeholder: "First Name",html:{class:"test"} %>
+    <br>
 
-    <p><%= f.label :last_name %></p>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, placeholder: "Last Name" %>
+    <br>
 
-    <p><%= f.label :email %></p>
-    <%= f.email_field :email %>
+    <%= f.email_field :email, placeholder: "Email" %>
+    <br>
 
-    <p><%= f.label :password %>(min. 6 characters)</p>
-    <%= f.password_field :password %><br>
+    <%= f.password_field :password, placeholder:"Password (min. 6 characters" %><br>
 
     <%= f.submit %>
+  </div>
   <% end %>
 
   <% if @user.errors.any? %>
@@ -22,4 +22,3 @@
       <p><%= msg %></p>
     <% end %>
   <% end %>
-</div>

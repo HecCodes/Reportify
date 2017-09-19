@@ -9,18 +9,36 @@
   </head>
 
   <body>
-    <div class="nav">
-      <ul>
-        <li><%= link_to "Home",root_path %></li>
-        <% if !signed_in? %>
-          <li><%= link_to "Sign_up", new_user_path %> |</li>
-          <li><%= link_to "Log in", new_session_path %> |</li>
-        <% else %>
-          <li><%= link_to current_user.email%>|</li>
-          <li><%= link_to "Log out | ", logout_path, method:"delete" %> </li>
-        <% end %>
-      </ul>
+    <header>
+      <h1><%= link_to "Reportify",root_path %></h1>
+        <div class='nav'>
+          <ul>
+              <% if !signed_in? %>
+                <li><%= link_to "Sign_up", new_user_path %> </li>
+                <li><%= link_to "Log in", new_session_path %></li>
+              <% else %>
+                <li><%= link_to current_user.email%></li>
+                <li><%= link_to "Log out", logout_path, method:"delete" %> </li>
+              <% end %>
+          </ul>
+        </div>
+    </header>
+    <div class="sidebar border">
+      <div>
+        <ul>
+              <% if !signed_in? %>
+                <li><%= link_to "Sign_up", new_user_path %> </li>
+                <li><%= link_to "Log in", new_session_path %></li>
+              <% else %>
+                <li><%= link_to current_user.email%></li>
+                <li><%= link_to "Log out", logout_path, method:"delete" %> </li>
+              <% end %>
+          </ul>
+      </div>
     </div>
-    <%= yield %>
+    <div class="container border">
+      <%= yield %>
+    </div>
+    <div class="students"></div>
   </body>
 </html>

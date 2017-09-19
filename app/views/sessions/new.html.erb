@@ -1,28 +1,24 @@
-<div class="container">
-  <h1>Log in</h1>
-  <div class="login">
-    <%= form_for(:session, url: sessions_path) do |f| %>
-    <div class="user-form-field">
-      <p><%= f.label :email %><p>
-      <%= f.email_field :email %>
+<h1>Log in</h1>
+<div class="login">
+  <%= form_for(:session, url: sessions_path) do |f| %>
+  <div class="user-form-field">
+    <%= f.email_field :email, placeholder: "Email" %>
 
-      <p><%= f.label :password %><p>
-      <%= f.password_field :password %><br>
-      <%= f.submit 'Submit' %>
-    </div>
-    <% end %>
+    <%= f.password_field :password, placeholder: "Password" %><br>
+    <%= f.submit 'Submit' %>
   </div>
-
-  <div class="register">
-    <p>New User? <%= link_to 'Sign up today!',new_user_path %></p>
-  </div>
-
-  <% if @errors %>
-    <div class="errors">
-      <h2>Sorry, please fix the following <%= pluralize(@errors.count,"error")%></h2>
-    <% @errors.each do |msg| %>
-      <p><%= msg %></p>
-    </div>
-    <% end %>
   <% end %>
 </div>
+
+<div class="register">
+  <p>New User? <%= link_to 'Sign up today!',new_user_path %></p>
+</div>
+
+<% if @errors %>
+  <div class="errors">
+    <h2>Sorry, please fix the following <%= pluralize(@errors.count,"error")%></h2>
+  <% @errors.each do |msg| %>
+    <p><%= msg %></p>
+  </div>
+  <% end %>
+<% end %>
