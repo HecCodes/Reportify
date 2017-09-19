@@ -54,6 +54,6 @@ consistently_good_effort:14,
 takes_responsibility:10,
 teacher_id:User.first.id,
 student_id:Student.first.id,
-feedback:"Aiden was perfec this week!",
+feedback:"Aiden was perfect this week!",
 date:"2017-09-12"
 )
