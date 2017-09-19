@@ -1,0 +1,12 @@
+<div class="right-container">
+  <div class="login">
+    <%= render 'form' %>
+    <% if @errors %>
+      <% @errors.each do |msg| %>
+        <div class="errors">
+          <p><%= msg %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
