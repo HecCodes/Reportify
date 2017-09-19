@@ -1,6 +1,10 @@
-<div class="container">
+<div class="right-container">
   <div class="login">
-    <%= render 'form' %>
+    <% if @parents.count > 0 %>
+      <%= render 'form' %>
+    <% else %>
+      <h1>Please add Parents first</h1>
+    <% end %>
     <% if @errors %>
       <% @errors.each do |msg| %>
         <div class="errors">

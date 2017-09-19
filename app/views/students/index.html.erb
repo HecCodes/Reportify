@@ -4,8 +4,11 @@
     <% @students.each do |student| %>
       <div class="student-box">
         <div class="circle"></div>
-        <h1><%= student.first_name %></h1>
-        <%= link_to "edit", "/students/#{student.id}/edit" %>
+        <p><%= student.first_name + " " + student.last_name[0]+"."%></p>
+        <ul class="test">
+          <li><%= link_to "edit", "/students/#{student.id}/edit" %> | </li>
+          <li><%= link_to "delete", "/students/#{student.id}", method: 'delete',data: {confirm: "Deleting this student will erase all of his/her reports. Are you sure?"} %></li>
+        </ul>
       </div>
     <% end %>
   </div>

@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
 
   def index
     secure_route
-    @students = Student.where(teacher_id:current_user.id)
+    @students = Student.where(teacher_id:current_user.id).order(:first_name)
     if @students.nil?
       redirect_to '/students/new'
     end
@@ -43,10 +43,23 @@ class StudentsController < ApplicationController
   end
 
   def update
-
+    space = params[:parent].index(" ")
+    first_name = params[:parent][0..space-1]
+    last_name = params[:parent][space+1..-1]
+    @student= Student.find_by(id:params[:id])
+    if @student.update(
+                        first_name:params[:student][:first_name],
+                        last_name:params[:student][:last_name],
+                        parent_id: Parent.find_by(first_name:first_name, last_name:last_name).id
+                      )
+      redirect_to '/students'
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-
+    student = Student.find_by(id:params[:id]).destroy
+    redirect_to '/students'
   end
 end
