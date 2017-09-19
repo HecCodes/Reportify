@@ -23,7 +23,7 @@
 }
 
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 55.5px;
   left: 0;
   border-right: 1px solid #eee;
