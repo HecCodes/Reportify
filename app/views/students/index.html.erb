@@ -1,5 +1,5 @@
 <div class="right-container">
-  <a href="#" class="add-student">Add a Student</a>
+  <%= link_to "Add a Student", new_student_path, class:'add-student' %>
   <div class="student-container">
     <% @students.each do |student| %>
       <div class="student-box">
