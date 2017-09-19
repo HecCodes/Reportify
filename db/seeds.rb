@@ -9,3 +9,51 @@
 hector=User.create(first_name:"Hector",last_name:"Feurtado",email:"HectorFeurtado@gmail.com",password:"AidenJ#1")
 ashalee=Parent.create(first_name:"Ashalee",last_name:"Ruiz",email:"ARuiz@gmail.com")
 aiden= Student.create(first_name:"Aiden",last_name:"Feurtado",teacher_id:hector.id,parent_id:ashalee.id)
+
+Report.create(
+test_quizes:0,
+homework:2,
+classwork:5,
+punctuality_attendance:11,
+contributions:3,
+collab_coop:3,
+openness_to_feedback:3,
+consistently_good_effort:14,
+takes_responsibility:9,
+teacher_id:User.first.id,
+student_id:Student.first.id,
+feedback:"Aiden could use more work",
+date:"2017-09-19"
+)
+
+Report.create(
+test_quizes:8,
+homework:8,
+classwork:9,
+punctuality_attendance:11,
+contributions:11,
+collab_coop:11,
+openness_to_feedback:3,
+consistently_good_effort:14,
+takes_responsibility:9,
+teacher_id:User.first.id,
+student_id:Student.first.id,
+feedback:"Aiden is doing great",
+date:"2017-09-15"
+)
+
+Report.create(
+test_quizes:11,
+homework:11,
+classwork:11,
+punctuality_attendance:11,
+contributions:11,
+collab_coop:11,
+openness_to_feedback:10,
+consistently_good_effort:14,
+takes_responsibility:10,
+teacher_id:User.first.id,
+student_id:Student.first.id,
+feedback:"Aiden was perfec this week!",
+date:"2017-09-12"
+)
