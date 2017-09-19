@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   resources :sessions, only:[:new,:create]
   resources :users, only:[:new,:create,:destroy,:show]
-  resources :students
+  resources :students, except:[:destroy]
+  delete '/students/:id', to:'students#destroy'
 
   delete '/logout', to:'sessions#destroy'
 end

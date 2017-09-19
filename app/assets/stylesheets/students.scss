@@ -29,3 +29,15 @@
   border-radius: 80px;
   background-color: blue;
 }
+.test {
+  position: relative;
+  top: -20px;
+  width: 110%;
+  margin: 0 auto;
+}
+.test li {
+  position: relative;
+  left: -8px;
+  float: left;
+  display: inline-block;
+}
