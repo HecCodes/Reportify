@@ -14,78 +14,19 @@
  *= require_self
  */
 
-.border {
-  border: 1px solid red;
-}
-
-header {
-  position: relative;
-  background-color: #343a40;
-  height: 50px;
-}
-
-header h1 {
+.wrap {
   position: absolute;
-  margin: 0;
-  top: 6.5px;
-  left: 0;
-  z-index: 1;
-  color: #0ab5ff;
-  padding-left: 10px;
-}
-
-h1 {
-  color: #000;
-}
-
-.nav {
-  position: absolute;
+  top: 56px;
   right: 0;
-  top: 0;
-  height: 50px;
-  width: 80%;
-  padding-right: 10px;
-}
-
-.nav ul {
-  list-style: none;
-  margin: 0 auto;
-  opacity: 0.9;
-  text-align: right;
-}
-a {
-  text-decoration: none;
-  color: #fff;
-  transition: 0.3s background-color;
-}
-.nav li {
-  display: inline-block;
-  font-family: 'SF Pro Text', 'Myriad Set Pro', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  font-size: 1.2em;
-  line-height: 50px;
-  height: 40px;
-  margin-left: 2%;
-}
-.nav a:hover {
-  background-color: #005f5f;
-}
-
-.container {
-  position: absolute;
-  top: 50px;
-  right: 0;
-  text-align: center;
-  width: 79.7%;
+  width: 83.4%;
   height: 100vh;
 }
 
-.container .col-10 {
-  margin: 0 auto;
-}
-
 .sidebar {
-  position: relative;
+  position: absolute;
+  top: 56.5px;
   left: 0;
-  width: 20%;
+  border-right: : 1px solid #eee;
+  width: 16.6%;
   height: 100vh;
 }

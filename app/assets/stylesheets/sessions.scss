@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.register a {
-  color: blue;
+.container {
+  background-color: #eee;
+}
+.login {
+  height: 100vh;
+  margin: 0 auto;
+  width: 300px;
+}
+.errors {
+  color: red;
 }

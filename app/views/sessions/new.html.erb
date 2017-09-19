@@ -1,24 +1,29 @@
-<h1>Log in</h1>
-<div class="login">
-  <%= form_for(:session, url: sessions_path) do |f| %>
-  <div class="user-form-field">
-    <%= f.email_field :email, placeholder: "Email" %>
+<div class="container">
+  <div class="login">
+    <%= form_for(:session, url: sessions_path,html:{class:'form-signin'}) do |f| %>
+      <h2 class="form-signin-heading">Please sign in</h2>
 
-    <%= f.password_field :password, placeholder: "Password" %><br>
-    <%= f.submit 'Submit' %>
+      <%= f.label :email, html:{class:"sr-only"} %>
+      <%= f.email_field :email,id:'inputEmail',class:'form-control', placeholder: "Email address" %>
+
+      <%= f.label :password, html:{class:"sr-only"} %>
+      <%= f.password_field :password,id:'inputPassword',class:'form-control', placeholder: "Password required" %>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+        <%= f.submit 'Sign in',class:'btn btn-lg btn-primary btn-block' %>
+    <% end %>
+    <div class="register">
+      <p>New User? <%= link_to 'Sign up today!',new_user_path %></p>
+    </div>
+    <% if @errors %>
+      <% @errors.each do |msg| %>
+        <div class="errors">
+          <p><%= msg %></p>
+        </div>
+      <% end %>
+    <% end %>
   </div>
-  <% end %>
 </div>
-
-<div class="register">
-  <p>New User? <%= link_to 'Sign up today!',new_user_path %></p>
-</div>
-
-<% if @errors %>
-  <div class="errors">
-    <h2>Sorry, please fix the following <%= pluralize(@errors.count,"error")%></h2>
-  <% @errors.each do |msg| %>
-    <p><%= msg %></p>
-  </div>
-  <% end %>
-<% end %>
