@@ -10,10 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170918163431) do
+ActiveRecord::Schema.define(version: 20170919041946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "parents", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "email", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.integer "test_quizes", null: false
+    t.integer "homework", null: false
+    t.integer "classwork", null: false
+    t.integer "punctuality_attendance", null: false
+    t.integer "contributions", null: false
+    t.integer "collab_coop", null: false
+    t.integer "openness_to_feedback", null: false
+    t.integer "consistently_good_effort", null: false
+    t.integer "takes_responsibility", null: false
+    t.integer "teacher_id"
+    t.integer "student_id"
+    t.string "feedback"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.integer "teacher_id"
+    t.integer "parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false
