@@ -38,7 +38,7 @@ class StudentsController < ApplicationController
   end
 
   def edit
-    @parents = Parent.all
+    @parents = Parent.where(teacher_id:current_user.id).order(:last_name)
     @student = Student.find_by(id:params[:id])
   end
 
