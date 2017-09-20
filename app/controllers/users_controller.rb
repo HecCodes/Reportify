@@ -13,7 +13,8 @@ class UsersController < ApplicationController
       @errors = ["Passwords do not match"]
       render 'new'
     else
-      @errors = ["Invalid Email"]
+      @errors = @user.errors.full_messages
+      render 'new'
     end
   end
 
