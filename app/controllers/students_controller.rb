@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
 
   def index
     secure_route
-    @students = Student.where(teacher_id:current_user.id).order(:first_name)
+      @students = Student.where(teacher_id:current_user).order(:first_name)
     if @students.nil?
       redirect_to '/students/new'
     end

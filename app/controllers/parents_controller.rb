@@ -1,5 +1,6 @@
 class ParentsController < ApplicationController
   include SessionsHelper
+
   def index
     secure_route
     @parents = Parent.all.order(:first_name)
