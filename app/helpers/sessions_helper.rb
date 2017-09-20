@@ -6,7 +6,7 @@ module SessionsHelper
 
   def current_user
     if session[:id]
-      User.find(session[:id])
+      User.find_by(id:session[:id])
     end
   end
 
