@@ -3,7 +3,7 @@
   <div class="student-container">
     <% @parents.each do |parent| %>
       <div class="student-box">
-        <div class="circle"></div>
+        <div class="circle-red"></div>
         <p><%= parent.first_name + " " + parent.last_name[0]+"."%></p>
         <ul class="test">
           <li><%= link_to "edit", "/parents/#{parent.id}/edit" %> | </li>
