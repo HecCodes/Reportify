@@ -3,7 +3,7 @@ class ParentsController < ApplicationController
 
   def index
     secure_route
-    @parents = Parent.all.order(:first_name)
+    @parents = Parent.where(teacher_id:current_user).order(:first_name)
     if @parents.nil?
       redirect_to '/parents/new'
     end
@@ -17,7 +17,8 @@ class ParentsController < ApplicationController
     @parent = Parent.new(
       first_name:params[:parent][:first_name],
       last_name:params[:parent][:last_name],
-      email: params[:parent][:email]
+      email: params[:parent][:email],
+      teacher_id: current_user.id
     )
     if @parent.save
       redirect_to parents_path

@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :students,foreign_key: :teacher_id
   has_many :reports, foreign_key: :teacher_id
+  has_many :created_parents, foreign_key: :teacher_id, class_name: :Parent
 end
