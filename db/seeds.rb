@@ -23,6 +23,7 @@ takes_responsibility:9,
 teacher_id:User.first.id,
 student_id:Student.first.id,
 feedback:"Aiden could use more work",
+assignment:"A assignment",
 date:"2017-09-19"
 )
 
@@ -39,6 +40,7 @@ takes_responsibility:9,
 teacher_id:User.first.id,
 student_id:Student.first.id,
 feedback:"Aiden is doing great",
+assignment:"B assignment",
 date:"2017-09-15"
 )
 
@@ -55,5 +57,6 @@ takes_responsibility:10,
 teacher_id:User.first.id,
 student_id:Student.first.id,
 feedback:"Aiden was perfect this week!",
+assignment:"C assignment",
 date:"2017-09-12"
 )
