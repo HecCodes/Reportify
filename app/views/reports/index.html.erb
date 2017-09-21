@@ -3,7 +3,7 @@
   <%@reports.each do |report|%>
     <h2><%= report.student.first_name %></h2>
     <h2><%= report.assignment %></h2>
-    <h3><%= report.date.strftime("%A, %m/%d/%Y") %></h3>
+    <h3><%= Report.date(report.id) %></h3>
     <%= link_to "report", "/reports/#{report.id}" %>
     <hr>
     <% end %>

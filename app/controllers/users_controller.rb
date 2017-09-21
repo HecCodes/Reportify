@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   include SessionsHelper
+  before_action :secure_route
   def new
     @user = User.new
   end

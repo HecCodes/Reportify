@@ -44,4 +44,8 @@ class Report < ApplicationRecord
     percentage = self.total_score(report_id)/one_hundred.to_f
     return percentage * 100
   end
+
+  def self.date(report_id)
+    self.find_by(id:report_id).date.strftime("%A, %m/%d/%Y")
+  end
 end
