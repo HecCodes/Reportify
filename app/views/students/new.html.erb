@@ -3,7 +3,7 @@
     <% if @parents.count > 0 %>
       <%= render 'form' %>
     <% else %>
-      <h1>Please add Parents first</h1>
+      <h1>Please add Parents first <%= link_to 'here', '/parents/new'%></h1>
     <% end %>
     <% if @errors %>
       <% @errors.each do |msg| %>

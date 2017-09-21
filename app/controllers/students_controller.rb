@@ -9,7 +9,7 @@ class StudentsController < ApplicationController
   end
 
   def new
-    @parents = Parent.all
+    @parents = Parent.where(teacher_id:current_user).order(:first_name)
     @student = Student.new
   end
 
