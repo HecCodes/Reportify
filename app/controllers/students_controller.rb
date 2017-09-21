@@ -34,7 +34,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-
+    @reports= Report.where(student_id:params[:id])
   end
 
   def edit
