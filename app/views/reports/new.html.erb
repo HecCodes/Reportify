@@ -1,0 +1,82 @@
+<div class="right-container">
+  <div class="login">
+    <h1>New Report</h1>
+    <%= form_for @report, url: {action: "create"}, class:'form-signin' do |f| %>
+    <% if @errors %>
+        <% @errors.each do |msg| %>
+          <div class="errors">
+            <p><%= msg %></p>
+          </div>
+        <% end %>
+    <% end %>
+
+    <div class="performance small-form">
+      <h5>Performance</h5>
+      <div class="fields">
+        <%= f.label "Test + Quizes" %>
+        <%= f.text_field :test_quizes,class:'form-control', placeholder: "(0-11)" %>
+        <%= f.label "Homework" %>
+        <%= f.text_field :homework,class:'form-control', placeholder: "(0-11)" %>
+        <%= f.label "Classwork" %>
+        <%= f.text_field :classwork,class:'form-control', placeholder: "(0-11)" %>
+      </div>
+    </div>
+
+    <div class="participation small-form">
+      <h5>Participation</h5>
+      <div class="fields">
+        <%= f.label "Punctuality + Attendance" %>
+        <%= f.text_field :punctuality_attendance,class:'form-control', placeholder: "(0-11)" %>
+
+        <%= f.label "Contributions" %>
+        <%= f.text_field :contributions,class:'form-control', placeholder: "(0-11)" %>
+
+        <%= f.label "Collab + Coop" %>
+        <%= f.text_field :collab_coop,class:'form-control', placeholder: "(0-11)" %>
+      </div>
+    </div>
+
+    <div class="commitment small-form">
+      <h5>Commitment</h5>
+      <div class="fields">
+        <%= f.label "Openness to Feedback" %>
+        <%= f.text_field :openness_to_feedback,class:'form-control', placeholder: "(0-10)" %>
+
+        <%= f.label "Consistently Good Effort" %>
+        <%= f.text_field :consistently_good_effort,class:'form-control', placeholder: "(0-14)" %>
+
+        <%= f.label "Takes Responsibility" %>
+        <%= f.text_field :takes_responsibility,class:'form-control', placeholder: "(0-10)" %>
+      </div>
+    </div>
+
+    <div class="feedback small-form">
+      <div class="fields">
+        <%= f.text_area :feedback,class:'form-control', placeholder: "Feedback" %>
+        <%= f.text_field :assignment,class:'form-control', placeholder: "Assignment Name" %>
+      </div>
+    </div>
+
+    <div class="">
+      <%= f.submit 'Submit',class:'btn btn-lg btn-primary btn-block' %>
+    </div>
+
+    <% end %>
+
+  </div>
+</div>
+
+<!-- # :test_quizes,
+# :homework,
+# :classwork,
+# :punctuality_attendance,
+# :contributions,
+# :collab_coop,
+# :openness_to_feedback,
+# :consistently_good_effort,
+# :takes_responsibility,
+# :teacher_id,
+# :student_id,
+# :feedback,
+# :assignment,
+# :date -->

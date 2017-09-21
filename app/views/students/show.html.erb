@@ -1,9 +1,9 @@
 <div class="right-container">
   <h1>Report Details</h1>
   <%@reports.each do |report|%>
-    <h2><%= report.student.first_name %></h2>
+    <h2><%= report.student.first_name + " " + report.student.last_name[0]+"." %></h2>
     <h2><%= report.assignment %></h2>
-    <h3><%= Report.date(report.id) %></h3>
+    <h3>Report Created: <%= Report.date(report.id) %></h3>
     <h5>Grade: <%= Report.grade(report.id) %>%</h5>
     <h5><%= link_to "report", "/reports/#{report.id}"%></h5>
     <hr>
