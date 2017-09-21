@@ -2,6 +2,7 @@
   <h1>Report Details</h1>
   <%@reports.each do |report|%>
     <h2><%= report.student.first_name %></h2>
+    <h2><%= report.assignment %></h2>
     <h3><%= report.date %></h3>
     <h5><%= Report.grade(report.id) %>%</h5>
     <ul>

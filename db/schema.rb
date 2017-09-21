@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20170919041946) do
     t.integer "teacher_id"
     t.integer "student_id"
     t.string "feedback"
+    t.string "assignment", null: false
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
