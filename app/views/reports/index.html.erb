@@ -1,10 +1,15 @@
 <div class="right-container">
-  <h1>Report Details</h1>
+  <h1>All Reports</h1>
+  <h4><% if @reports.empty? %>
+    <%= link_to 'add new report', students_path %>
+  <% end %></h4>
   <%@reports.each do |report|%>
-    <h2><%= report.student.first_name %></h2>
-    <h2><%= report.assignment %></h2>
-    <h3><%= Report.date(report.id) %></h3>
-    <%= link_to "report", "/reports/#{report.id}" %>
-    <hr>
+  <div class="report-container pretty-report">
+    <h2><%= report.student.first_name + " " + report.student.last_name[0] + "."  %></h2>
+    <h5>Grade: <%= Report.grade(report.id).floor %> %</h5>
+    <h5><%= report.assignment %></h2>
+    <h6><%= Report.date(report.id) %></h6>
+    <%= link_to "view report", "/reports/#{report.id}" %>
+  </div>
     <% end %>
 </div>

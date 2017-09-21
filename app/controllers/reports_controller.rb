@@ -38,20 +38,10 @@ class ReportsController < ApplicationController
   def show
     @report=Report.find_by(id:params[:id])
   end
+
+  def destroy
+    Report.find_by(id:params[:id]).destroy
+    redirect_to '/reports'
+  end
+
 end
-
-
-# :test_quizes,
-# :homework,
-# :classwork,
-# :punctuality_attendance,
-# :contributions,
-# :collab_coop,
-# :openness_to_feedback,
-# :consistently_good_effort,
-# :takes_responsibility,
-# :teacher_id,
-# :student_id,
-# :feedback,
-# :assignment,
-# :date
