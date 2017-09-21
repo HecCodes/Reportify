@@ -3,7 +3,7 @@ class ReportsController < ApplicationController
   before_action :secure_route
 
   def index
-    @reports = Report.where(teacher_id:current_user).order(:created_at)
+    @reports = Report.where(teacher_id:current_user).order('created_at desc')
   end
 
   def new

@@ -1,6 +1,9 @@
 <div class="right-container">
   <h1>Parents</h1>
   <h4><%= link_to "Add a Parent", new_parent_path, class:'add-student' %></h4>
+  <% if !@parents.empty? %>
+    <p class="note"> <b>NOTE</b>: Once a student is added, he/she will appear under corresponding parents name. </p>
+  <% end %>
   <div class="student-container">
     <% @parents.each do |parent| %>
       <div class="student-box pretty-report center">
