@@ -34,6 +34,7 @@ class StudentsController < ApplicationController
 
   def show
     @reports= Report.where(student_id:params[:id]).order('created_at DESC')
+    @student = Student.find_by(id:params[:id])
   end
 
   def edit

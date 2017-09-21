@@ -1,31 +1,32 @@
 <div class="right-container">
-  <h1>Report</h1>
-  <h4></h4>
-  <h3><%= Report.date(@report.id) %></h3>
-  <h5>Grade: <%= Report.grade(@report.id)%> %</h5>
-  <div>
-    <div>
-      <h3>Performance(<%= Report.performance_score(@report.id) %> out of <%= Report.performance_total_score %> )</h3>
+  <div class="login">
+    <h1><%= @report.student.first_name.capitalize %>'s Report</h1>
+    <h4><%= link_to "Delete", "/reports/#{@report.id}",method: 'delete',data: {confirm: "Are you sure you want to delete this report?"} %></h4>
+    <h3><%= Report.date(@report.id) %></h3>
+    <h3>Grade: <%= Report.grade(@report.id)%> %</h3>
+
+    <div class="pretty-report">
+      <h5>Performance(<%= Report.performance_score(@report.id) %> out of <%= Report.performance_total_score %> )</h5>
       <li>Skill Improvement (Tests + Quizes): <%= @report.test_quizes %>/11</li>
       <li>Homework: <%= @report.homework %>/11</li>
       <li>Classwork: <%= @report.classwork %>/11</li>
     </div>
-    <div>
-      <h3>Participation(<%= Report.participation_score(@report.id) %> out of <%= Report.participation_total_score %>)</h3>
+    <div class="pretty-report">
+      <h5>Participation(<%= Report.participation_score(@report.id) %> out of <%= Report.participation_total_score %>)</h5>
       <li>Punctuality/Attendance: <%= @report.punctuality_attendance %>/11</li>
       <li>Contributions: <%= @report.contributions %>/11</li>
       <li>Collaboration/Cooperation: <%= @report.collab_coop %>/11</li>
     </div>
-    <div>
-      <h3>Commitment (<%= Report.commitment_score(@report.id) %> out of <%= Report.commitment_total_score %>)</h3>
+    <div class="pretty-report">
+      <h5>Commitment (<%= Report.commitment_score(@report.id) %> out of <%= Report.commitment_total_score %>)</h5>
       <li>Openness to feedback: <%= @report.openness_to_feedback %>/10</li>
       <li>Consistently Good Effort: <%= @report.consistently_good_effort %>/14</li>
       <li>Takes Responsibility: <%= @report.takes_responsibility %>/10</li>
     </div>
 
-    <div>
+    <div class="pretty-report feed">
+      <h5>Feedback</h5>
       Feedback: <%= @report.feedback %>
     </div>
   </div>
-
 </div>

@@ -1,16 +1,14 @@
 <div class="right-container">
-  <%= link_to "Add a Student", new_student_path, class:'add-student' %>
+  <h1>Students</h1>
+  <h4><%= link_to "Add a Student", new_student_path, class:'add-student' %></h4>
   <div class="student-container">
     <% @students.each do |student| %>
-      <div class="student-box">
-        <div class="circle"></div>
-        <p><%= student.first_name + " " + student.last_name[0]+"."%></p>
-        <ul class="test">
-          <li><%= link_to "edit", "/students/#{student.id}/edit" %> | </li>
-          <li><%= link_to "delete", "/students/#{student.id}", method: 'delete',data: {confirm: "Deleting this student will erase all of his/her reports. Are you sure?"} %> | </li>
-          <li><%= link_to "reports", "/students/#{student.id}" %> |</li>
-          <li><%= link_to "add-report", "/students/#{student.id}/reports/new" %> |</li>
-        </ul>
+      <div class="pretty-report student">
+        <h5><%= student.first_name.capitalize + " " + student.last_name[0]+"."%></h5>
+          <%= link_to "Edit", "/students/#{student.id}/edit", class:"link" %> |
+          <%= link_to "Delete", "/students/#{student.id}", method: 'delete',data: {confirm: "Deleting this student will erase all of his/her reports. Are you sure?"}, class:"link" %> |
+          <%= link_to "View Reports", "/students/#{student.id}",class:"link" %> |
+          <%= link_to "Add Report", "/students/#{student.id}/reports/new",class:"link" %>
       </div>
     <% end %>
   </div>

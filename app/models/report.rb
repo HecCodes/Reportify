@@ -42,7 +42,7 @@ class Report < ApplicationRecord
   def self.grade(report_id)
     one_hundred = Report.performance_total_score + Report.participation_total_score + Report.commitment_total_score
     percentage = self.total_score(report_id)/one_hundred.to_f
-    return percentage * 100
+    return (percentage * 100).floor
   end
 
   def self.date(report_id)

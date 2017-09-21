@@ -1,7 +1,7 @@
 <div class="right-container">
   <div class="login">
-    <h1>New Report</h1>
-    <%= form_for @report, url: {action: "create"}, class:'form-signin' do |f| %>
+    <h1>Edit Report</h1>
+    <%= form_for @report, url: {action: "update"}, class:'form-signin' do |f| %>
     <% if @errors %>
         <% @errors.each do |msg| %>
           <div class="errors">
@@ -10,7 +10,7 @@
         <% end %>
     <% end %>
 
-    <div class="performance pretty-report">
+    <div class="performance small-form">
       <h5>Performance</h5>
       <div class="fields">
         <%= f.label "Test + Quizes" %>
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="participation pretty-report">
+    <div class="participation small-form">
       <h5>Participation</h5>
       <div class="fields">
         <%= f.label "Punctuality + Attendance" %>
@@ -36,7 +36,7 @@
       </div>
     </div>
 
-    <div class="commitment pretty-report">
+    <div class="commitment small-form">
       <h5>Commitment</h5>
       <div class="fields">
         <%= f.label "Openness to Feedback" %>
@@ -50,30 +50,17 @@
       </div>
     </div>
 
-    <div class="pretty-report">
-      <div class="fields feedback">
+    <div class="feedback small-form">
+      <div class="fields">
         <%= f.text_area :feedback,class:'form-control', placeholder: "Feedback" %>
         <%= f.text_field :assignment,class:'form-control', placeholder: "Assignment Name" %>
       </div>
     </div>
-    <%= f.submit 'Submit',class:'btn btn-lg btn-primary btn-block submit' %>
+
+    <div class="">
+      <%= f.submit 'Submit',class:'btn btn-lg btn-primary btn-block' %>
+    </div>
 
     <% end %>
-
   </div>
 </div>
-
-<!-- # :test_quizes,
-# :homework,
-# :classwork,
-# :punctuality_attendance,
-# :contributions,
-# :collab_coop,
-# :openness_to_feedback,
-# :consistently_good_effort,
-# :takes_responsibility,
-# :teacher_id,
-# :student_id,
-# :feedback,
-# :assignment,
-# :date -->
