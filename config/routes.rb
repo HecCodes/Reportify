@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   resources :users, only:[:new,:create,:destroy,:show]
   resources :parents, except:[:destroy]
   resources :students, except:[:destroy]
+  resources :reports, except:[:destroy]
 
+  delete '/reports/:id', to: 'reports#destroy'
   delete '/students/:id', to:'students#destroy'
   delete '/parents/:id', to:'parents#destroy'
   delete '/logout', to:'sessions#destroy'

@@ -1,0 +1,30 @@
+<div class="right-container">
+  <h1>Report Details</h1>
+  <%@reports.each do |report|%>
+    <h2><%= report.student.first_name %></h2>
+    <h3><%= report.date %></h3>
+    <h5><%= Report.grade(report.id) %>%</h5>
+    <ul>
+      <div>
+        <h3>Performance(<%= Report.performance_score(report.id) %> out of <%= Report.performance_total_score %> )</h3>
+        <li>Skill Improvement (Tests + Quizes): <%= report.test_quizes %>/11</li>
+        <li>Homework: <%= report.homework %>/11</li>
+        <li>Classwork: <%= report.classwork %>/11</li>
+      </div>
+      <div>
+        <h3>Participation(<%= Report.participation_score(report.id) %> out of <%= Report.participation_total_score %>)</h3>
+        <li>Punctuality/Attendance: <%= report.punctuality_attendance %>/11</li>
+        <li>Contributions: <%= report.contributions %>/11</li>
+        <li>Collaboration/Cooperation: <%= report.collab_coop %>/11</li>
+      </div>
+      <div>
+        <h3>Commitment (<%= Report.commitment_score(report.id) %> out of <%= Report.commitment_total_score %>)</h3>
+        <li>Openness to feedback: <%= report.openness_to_feedback %>/10</li>
+        <li>Consistently Good Effort: <%= report.consistently_good_effort %>/14</li>
+        <li>Takes Responsibility: <%= report.takes_responsibility %>/10</li>
+      </div>
+      <li>Feedback: <%= report.feedback %></li>
+    </ul>
+    <hr>
+    <% end %>
+</div>
