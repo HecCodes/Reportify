@@ -1,7 +1,6 @@
 <div class="right-container">
   <div class="login">
     <h1>Edit Report</h1>
-    <%= form_for @report, url: {action: "update"}, class:'form-signin' do |f| %>
     <% if @errors %>
         <% @errors.each do |msg| %>
           <div class="errors">
@@ -9,8 +8,9 @@
           </div>
         <% end %>
     <% end %>
+    <%= form_for @report, url: {action: "update"}, class:'form-signin' do |f| %>
 
-    <div class="performance small-form">
+    <div class="performance pretty-report">
       <h5>Performance</h5>
       <div class="fields">
         <%= f.label "Test + Quizes" %>
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="participation small-form">
+    <div class="participation pretty-report">
       <h5>Participation</h5>
       <div class="fields">
         <%= f.label "Punctuality + Attendance" %>
@@ -36,7 +36,7 @@
       </div>
     </div>
 
-    <div class="commitment small-form">
+    <div class="commitment pretty-report">
       <h5>Commitment</h5>
       <div class="fields">
         <%= f.label "Openness to Feedback" %>
@@ -50,16 +50,14 @@
       </div>
     </div>
 
-    <div class="feedback small-form">
+    <div class="feed pretty-report">
       <div class="fields">
         <%= f.text_area :feedback,class:'form-control', placeholder: "Feedback" %>
         <%= f.text_field :assignment,class:'form-control', placeholder: "Assignment Name" %>
       </div>
     </div>
 
-    <div class="">
-      <%= f.submit 'Submit',class:'btn btn-lg btn-primary btn-block' %>
-    </div>
+    <%= f.submit 'Submit',class:'btn btn-lg btn-primary btn-block submit' %>
 
     <% end %>
   </div>
