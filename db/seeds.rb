@@ -6,57 +6,29 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-hector=User.create(first_name:"Hector",last_name:"Feurtado",email:"HectorFeurtado@gmail.com",password:"AidenJ#1")
+hector=User.create(first_name:"Hector",last_name:"Feurtado",email:"HectorFeurtado@gmail.com",password:"123456")
 ashalee=Parent.create(first_name:"Ashalee",last_name:"Ruiz",email:"ARuiz@gmail.com",teacher_id:hector.id)
 aiden= Student.create(first_name:"Aiden",last_name:"Feurtado",teacher_id:hector.id,parent_id:ashalee.id)
 
-Report.create(
-test_quizes:0,
-homework:2,
-classwork:5,
-punctuality_attendance:11,
-contributions:3,
-collab_coop:3,
-openness_to_feedback:3,
-consistently_good_effort:14,
-takes_responsibility:9,
-teacher_id:User.first.id,
-student_id:Student.first.id,
-feedback:"Aiden could use more work",
-assignment:"A assignment",
-date:"2017-09-19"
-)
-
-Report.create(
-test_quizes:8,
-homework:8,
-classwork:9,
-punctuality_attendance:11,
-contributions:11,
-collab_coop:11,
-openness_to_feedback:3,
-consistently_good_effort:14,
-takes_responsibility:9,
-teacher_id:User.first.id,
-student_id:Student.first.id,
-feedback:"Aiden is doing great",
-assignment:"B assignment",
-date:"2017-09-15"
-)
-
-Report.create(
-test_quizes:11,
-homework:11,
-classwork:11,
-punctuality_attendance:11,
-contributions:11,
-collab_coop:11,
-openness_to_feedback:10,
-consistently_good_effort:14,
-takes_responsibility:10,
-teacher_id:User.first.id,
-student_id:Student.first.id,
-feedback:"Aiden was perfect this week!",
-assignment:"C assignment",
-date:"2017-09-12"
-)
+10.times do
+  Report.create(
+  test_quizes:rand(0..11),
+  homework:rand(0..11),
+  classwork:rand(0..11),
+  punctuality_attendance:rand(0..11),
+  contributions:rand(0..11),
+  collab_coop:rand(0..11),
+  openness_to_feedback:rand(0..10),
+  consistently_good_effort:rand(0..14),
+  takes_responsibility:rand(0..10),
+  teacher_id:User.first.id,
+  student_id:Student.first.id,
+  feedback:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  assignment:"A assignment"
+  )
+end

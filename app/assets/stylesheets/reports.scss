@@ -1,3 +1,16 @@
 // Place all the styles related to the Reports controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.small-form {
+  position: relative;
+  text-align: center;
+  border: 1px solid #0ab5ff;
+  border-radius: 25px;
+  margin-top: 2%;
+}
+
+.fields {
+  margin: 0 auto;
+  width: 55%;
+}

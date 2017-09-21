@@ -14,7 +14,6 @@ class CreateReports < ActiveRecord::Migration[5.1]
       t.integer :student_id, foreign_key:true
       t.string  :feedback
       t.string  :assignment, null:false
-      t.date :date
       t.timestamps
     end
   end

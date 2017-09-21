@@ -7,8 +7,9 @@
         <p><%= student.first_name + " " + student.last_name[0]+"."%></p>
         <ul class="test">
           <li><%= link_to "edit", "/students/#{student.id}/edit" %> | </li>
-          <li><%= link_to "delete", "/students/#{student.id}", method: 'delete',data: {confirm: "Deleting this student will erase all of his/her reports. Are you sure?"} %></li>
-          <li><%= link_to "reports", "/students/#{student.id}" %></li>
+          <li><%= link_to "delete", "/students/#{student.id}", method: 'delete',data: {confirm: "Deleting this student will erase all of his/her reports. Are you sure?"} %> | </li>
+          <li><%= link_to "reports", "/students/#{student.id}" %> |</li>
+          <li><%= link_to "add-report", "/students/#{student.id}/reports/new" %> |</li>
         </ul>
       </div>
     <% end %>
