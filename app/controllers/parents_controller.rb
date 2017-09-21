@@ -1,8 +1,7 @@
 class ParentsController < ApplicationController
   include SessionsHelper
-
+  before_action :secure_route
   def index
-    secure_route
     @parents = Parent.where(teacher_id:current_user).order(:first_name)
     if @parents.nil?
       redirect_to '/parents/new'

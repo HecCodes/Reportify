@@ -1,8 +1,7 @@
 class StudentsController < ApplicationController
   include SessionsHelper
-
+  before_action :secure_route
   def index
-    secure_route
       @students = Student.where(teacher_id:current_user).order(:first_name)
     if @students.nil?
       redirect_to '/students/new'
@@ -34,7 +33,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-
+    @reports= Report.where(student_id:params[:id])
   end
 
   def edit

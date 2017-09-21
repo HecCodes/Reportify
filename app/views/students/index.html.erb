@@ -8,6 +8,7 @@
         <ul class="test">
           <li><%= link_to "edit", "/students/#{student.id}/edit" %> | </li>
           <li><%= link_to "delete", "/students/#{student.id}", method: 'delete',data: {confirm: "Deleting this student will erase all of his/her reports. Are you sure?"} %></li>
+          <li><%= link_to "reports", "/students/#{student.id}" %></li>
         </ul>
       </div>
     <% end %>
