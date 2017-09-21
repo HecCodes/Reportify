@@ -6,6 +6,15 @@ class ReportsController < ApplicationController
     @reports = Report.where(teacher_id:current_user).order(:date)
   end
 
+  def new
+    @report = Report.new
+  end
+
+  def create
+
+  end
+
+
   def show
     @report=Report.find_by(id:params[:id])
   end
