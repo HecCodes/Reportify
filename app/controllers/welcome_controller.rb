@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
 
   def index
     secure_route
-    if !params[:id].nil?
+    if !session[:id].nil?
       @user = User.find_by(id:current_user.id)
     end
   end
