@@ -7,21 +7,21 @@
     <h3><%= Report.date(@report.id) %></h3>
     <h3>Grade: <%= Report.grade(@report.id)%> %</h3>
 
-    <div class="pretty-report">
+    <div class="pretty-report bg-image">
       <h4>Performance</h4>
       <h5>(<%= Report.performance_score(@report.id) %> out of <%= Report.performance_total_score %> )</h5>
       <li>Skill Improvement (Tests + Quizes): <%= @report.test_quizes %>/11</li>
       <li>Homework: <%= @report.homework %>/11</li>
       <li>Classwork: <%= @report.classwork %>/11</li>
     </div>
-    <div class="pretty-report">
+    <div class="pretty-report bg-image">
       <h4>Participation</h4>
       <h5>(<%= Report.participation_score(@report.id) %> out of <%= Report.participation_total_score %>)</h5>
       <li>Punctuality + Attendance: <%= @report.punctuality_attendance %>/11</li>
       <li>Contributions: <%= @report.contributions %>/11</li>
       <li>Collaboration + Cooperation: <%= @report.collab_coop %>/11</li>
     </div>
-    <div class="pretty-report">
+    <div class="pretty-report bg-image">
       <h4>Commitment</h4>
       <h5>(<%= Report.commitment_score(@report.id) %> out of <%= Report.commitment_total_score %>)</h5>
       <li>Openness to feedback: <%= @report.openness_to_feedback %>/10</li>
@@ -29,7 +29,7 @@
       <li>Takes Responsibility: <%= @report.takes_responsibility %>/10</li>
     </div>
 
-    <div class="pretty-report feed">
+    <div class="pretty-report bg-image feed">
       <h4>Feedback</h4>
       <p><%= @report.feedback %></p>
     </div>

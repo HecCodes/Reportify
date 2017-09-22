@@ -4,7 +4,7 @@
     <%= link_to 'add new report', students_path %>
   <% end %></h4>
   <%@reports.each do |report|%>
-  <div class="report-container pretty-report">
+  <div class="report-container pretty-report bg-image">
     <h2><%= report.student.first_name + " " + report.student.last_name[0] + "."  %></h2>
     <h5>Grade: <%= Report.grade(report.id).floor %> %</h5>
     <h5><%= report.assignment %></h2>

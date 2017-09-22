@@ -3,7 +3,7 @@
   <h4><%= link_to "Add a Student", new_student_path, class:'add-student' %></h4>
   <div class="student-container">
     <% @students.each do |student| %>
-      <div class="pretty-report student">
+      <div class="pretty-report student bg-image">
         <h5><%= student.first_name.capitalize + " " + student.last_name[0]+"."%></h5>
           <%= link_to "Edit", "/students/#{student.id}/edit", class:"link" %> |
           <%= link_to "Delete", "/students/#{student.id}", method: 'delete',data: {confirm: "Deleting this student will erase all of his/her reports. Are you sure?"}, class:"link" %> |

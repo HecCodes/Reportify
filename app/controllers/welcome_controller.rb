@@ -3,6 +3,7 @@ class WelcomeController < ApplicationController
 
   def index
     secure_route
+    @user = User.find_by(id:current_user.id)
   end
 
 end
