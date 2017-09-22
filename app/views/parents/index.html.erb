@@ -6,10 +6,10 @@
   <% end %>
   <div class="student-container">
     <% @parents.each do |parent| %>
-      <div class="student-box pretty-report center">
+      <div class="pretty-report center bg-image">
         <h5><%= parent.first_name.capitalize + " " + parent.last_name[0]+"."%></h5>
             <% parent.children.each do |child| %>
-              <div><%= link_to child.first_name.capitalize, "/students/#{child.id}" %></div>
+              <div><%= link_to child.first_name.capitalize, "/students/#{child.id}", class:"p-s-name" %></div>
             <% end %>
             <%= link_to "Edit", "/parents/#{parent.id}/edit", class:"link"%> |
             <%= link_to "Delete", "/parents/#{parent.id}", method: 'delete',data: {confirm: " Are you sure?"},class:"link" %>
